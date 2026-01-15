@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration Sculptures - Whale Migration Visualization</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Three.js canvas will be inserted here -->
+        <canvas id="three-canvas"></canvas>
+        
+        <!-- Info Panel -->
+        <div id="info-panel" class="panel hidden">
+            <button id="close-panel" class="close-btn">&times;</button>
+            <h2 id="specimen-title">Select a Sculpture</h2>
+            <div id="specimen-info">
+                <div class="info-row">
+                    <span class="label">Species:</span>
+                    <span id="info-species" class="value">—</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Season:</span>
+                    <span id="info-season" class="value">—</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Year:</span>
+                    <span id="info-year" class="value">—</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Tracks:</span>
+                    <span id="info-tracks" class="value">—</span>
+                </div>
+            </div>
+            
+            <h3>Metrics</h3>
+            <div id="metrics-info">
+                <div class="metric">
+                    <div class="metric-header">
+                        <span class="metric-name">Route Coherence</span>
+                        <span id="metric-coherence-rating" class="metric-rating">—</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div id="metric-coherence-fill" class="metric-fill" style="width: 0%"></div>
+                    </div>
+                    <span id="metric-coherence-value" class="metric-value">—</span>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-header">
+                        <span class="metric-name">Density Entropy</span>
+                        <span id="metric-entropy-rating" class="metric-rating">—</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div id="metric-entropy-fill" class="metric-fill" style="width: 0%"></div>
+                    </div>
+                    <span id="metric-entropy-value" class="metric-value">—</span>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-header">
+                        <span class="metric-name">Centroid Drift</span>
+                        <span id="metric-drift-direction" class="metric-rating">—</span>
+                    </div>
+                    <span id="metric-drift-value" class="metric-value">—</span>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-header">
+                        <span class="metric-name">Temporal Variability</span>
+                        <span id="metric-variability-rating" class="metric-rating">—</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div id="metric-variability-fill" class="metric-fill" style="width: 0%"></div>
+                    </div>
+                    <span id="metric-variability-value" class="metric-value">—</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header -->
+        <header id="header">
+            <h1>Migration Sculptures</h1>
+            <p class="subtitle">Whale Migration Paths in the Santa Barbara Channel</p>
+        </header>
+        
+        <!-- Controls -->
+        <div id="controls" class="panel">
+            <div class="control-group">
+                <label for="species-filter">Species:</label>
+                <select id="species-filter">
+                    <option value="all">All Species</option>
+                    <option value="blue_whale">Blue Whale</option>
+                    <option value="fin_whale">Fin Whale</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="season-filter">Season:</label>
+                <select id="season-filter">
+                    <option value="all">All Seasons</option>
+                    <option value="spring">Spring</option>
+                    <option value="fall">Fall</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="view-mode">View Mode:</label>
+                <select id="view-mode">
+                    <option value="bundle">Trajectory Bundle</option>
+                    <option value="terrain">Density Terrain</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Loading indicator -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading sculptures...</p>
+        </div>
+        
+        <!-- Legend -->
+        <div id="legend" class="panel">
+            <h4>Legend</h4>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #4a90d9;"></span>
+                <span>Blue Whale</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #7c7c7c;"></span>
+                <span>Fin Whale</span>
+            </div>
+            <div class="legend-divider"></div>
+            <div class="legend-item">
+                <span class="legend-icon">↑</span>
+                <span>Spring (Northbound)</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-icon">↓</span>
+                <span>Fall (Southbound)</span>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="src/js/main.js"></script>
+</body>
+</html>

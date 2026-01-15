@@ -1,0 +1,30 @@
+{
+  "name": "migration-sculptures-visualization",
+  "version": "0.1.0",
+  "description": "Interactive 3D visualization of whale migration sculptures",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js"
+  },
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.160.0",
+    "eslint": "^8.55.0",
+    "vite": "^5.0.0"
+  },
+  "keywords": [
+    "whale",
+    "migration",
+    "visualization",
+    "three.js",
+    "webgl",
+    "data-art"
+  ],
+  "author": "",
+  "license": "MIT"
+}

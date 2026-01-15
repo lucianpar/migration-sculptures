@@ -1,0 +1,38 @@
+# Migration Sculptures - Python Pipeline Dependencies
+# Data Processing & Analysis
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Geospatial Processing
+geopandas>=0.13.0
+pyproj>=3.5.0
+shapely>=2.0.0
+
+# 3D Geometry & Mesh Processing
+scikit-image>=0.21.0    # marching cubes for isosurface extraction
+trimesh>=4.0.0          # mesh manipulation and simplification
+pygltflib>=1.16.0       # glTF/GLB export
+numpy-stl>=3.0.0        # STL file support (backup format)
+
+# Visualization (for debugging/preview)
+matplotlib>=3.7.0
+plotly>=5.15.0
+
+# Data Acquisition
+requests>=2.31.0
+aiohttp>=3.8.0          # async downloads
+
+# Configuration & Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+tqdm>=4.65.0            # progress bars
+click>=8.1.0            # CLI utilities
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Jupyter support (optional, for exploration)
+jupyter>=1.0.0
+ipykernel>=6.25.0
