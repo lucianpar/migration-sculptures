@@ -40,9 +40,22 @@ data/processed/
 *.parquet
 
 # Output (generated files)
-output/models/*.glb
+output/models/
 output/metrics/
-visualization/public/models/*.glb
+visualization/public/models/
+
+# 3D Model files (all formats)
+*.glb
+*.gltf
+*.obj
+*.fbx
+*.dae
+*.3ds
+*.ply
+*.stl
+*.x3d
+*.blend
+*.blend1
 
 # Build output
 visualization/dist/
