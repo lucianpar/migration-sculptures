@@ -9,11 +9,16 @@ geopandas>=0.13.0
 pyproj>=3.5.0
 shapely>=2.0.0
 
+# Machine Learning (for clustering in Option A)
+scikit-learn>=1.0.0
+
 # 3D Geometry & Mesh Processing
 scikit-image>=0.21.0    # marching cubes for isosurface extraction
 trimesh>=4.0.0          # mesh manipulation and simplification
 pygltflib>=1.16.0       # glTF/GLB export
 numpy-stl>=3.0.0        # STL file support (backup format)
+mapbox-earcut>=1.0.0    # triangulation engine for trimesh
+manifold3d>=2.0.0       # mesh boolean operations
 
 # Visualization (for debugging/preview)
 matplotlib>=3.7.0

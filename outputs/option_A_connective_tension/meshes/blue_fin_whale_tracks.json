@@ -1,0 +1,35 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "blue_fin_whale_tracks",
+  "option": "A",
+  "n_triangles": 53088,
+  "n_vertices": 26880,
+  "scale_factor": 1.19113522561845e-05,
+  "bbox_before_normalization": {
+    "max_dimension": 167907.0484177461,
+    "bounds": {
+      "min": [
+        736818.2206248774,
+        3709589.536447442,
+        -450.61606438794547
+      ],
+      "max": [
+        834091.2427695116,
+        3877496.584865188,
+        54218.8556726072
+      ]
+    }
+  },
+  "generation_params": {
+    "n_nodes": 100,
+    "n_edges": 168,
+    "k_neighbors": 3,
+    "tube_radius_range_m": [
+      200.0,
+      800.0
+    ],
+    "edge_sag": 0.08
+  }
+}
