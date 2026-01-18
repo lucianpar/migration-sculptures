@@ -101,6 +101,19 @@ def run_module_c(track_data: TrackData, config: Config, output_dir: Path) -> dic
     return metadata.to_dict()
 
 
+def run_module_d(track_data: TrackData, config: Config, output_dir: Path) -> dict:
+    """Run Option D: Carved Membrane (Hybrid B+C)."""
+    from option_D_carved_membrane.build import build_carved_membrane
+    
+    mesh, metadata = build_carved_membrane(track_data, config)
+    
+    # Save
+    output_path = output_dir / "option_D_carved_membrane" / "meshes" / f"{track_data.specimen_id}.glb"
+    save_mesh(mesh, output_path, metadata)
+    
+    return metadata.to_dict()
+
+
 def run_all(
     data_files: List[Path],
     modules: List[str],
@@ -130,7 +143,8 @@ def run_all(
     module_runners = {
         'A': run_module_a,
         'B': run_module_b,
-        'C': run_module_c
+        'C': run_module_c,
+        'D': run_module_d
     }
     
     for data_file in data_files:

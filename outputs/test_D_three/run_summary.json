@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-01-18T12:00:24.472801",
+  "config": {
+    "unit_mode": "normalized",
+    "normalized_max_dim": 2.0,
+    "utm_zone": 10,
+    "utm_hemisphere": "N",
+    "voxel_resolution": 128,
+    "max_triangles": 100000,
+    "smoothing_iterations": 3,
+    "track_resample_distance_m": 2000.0
+  },
+  "modules": [
+    "D"
+  ],
+  "specimens": [
+    {
+      "specimen_id": "subset_three_whales",
+      "data_file": "data/subsets/subset_three_whales.csv",
+      "modules": {
+        "D": {
+          "status": "success",
+          "metadata": {
+            "unit_mode": "normalized",
+            "bbox_max_dimension": 2.0,
+            "normalization_applied": true,
+            "specimen_id": "subset_three_whales",
+            "option": "D",
+            "n_triangles": 21484,
+            "n_vertices": 10746,
+            "scale_factor": 2.032597695743039e-05,
+            "bbox_before_normalization": {
+              "max_dimension": 98396.25441811187,
+              "bounds": {
+                "min": [
+                  741596.2341184914,
+                  3705987.717527452,
+                  -2638.515748109655
+                ],
+                "max": [
+                  767739.1586253615,
+                  3804383.971945564,
+                  40702.45848431067
+                ]
+              }
+            },
+            "generation_params": {
+              "algorithm": "carved_membrane",
+              "voxel_res": 160,
+              "voxel_spacing_m": 789.3964585041266,
+              "blur_sigma_density": 1.4,
+              "t_outer_factor": 0.22,
+              "t_outer_absolute": 0.8360789788465313,
+              "t_inner_factor": 0.55,
+              "t_inner_absolute": 2.0901974471163283,
+              "sdf_blur_sigma": 0.8,
+              "envelope_radius_vox": 16.87921977086387,
+              "envelope_radius_m": 13324.396309432774,
+              "smoothing_iterations": 15,
+              "target_tris": 100000,
+              "watertight": true,
+              "outer_voxels": 20144,
+              "inner_voxels": 3062,
+              "final_voxels": 16975
+            }
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}

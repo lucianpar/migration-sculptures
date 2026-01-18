@@ -1,0 +1,44 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "subset_single_whale",
+  "option": "D",
+  "n_triangles": 20806,
+  "n_vertices": 10420,
+  "scale_factor": 1.980378656944098e-05,
+  "bbox_before_normalization": {
+    "max_dimension": 100990.78744295193,
+    "bounds": {
+      "min": [
+        779647.9138338345,
+        3707347.8141455892,
+        -2347.145677181172
+      ],
+      "max": [
+        811794.077052135,
+        3808338.601588541,
+        97720.90565349392
+      ]
+    }
+  },
+  "generation_params": {
+    "algorithm": "carved_membrane",
+    "voxel_res": 160,
+    "voxel_spacing_m": 776.2938660306949,
+    "blur_sigma_density": 1.4,
+    "t_outer_factor": 0.22,
+    "t_outer_absolute": 0.6465928181238507,
+    "t_inner_factor": 0.55,
+    "t_inner_absolute": 1.616482045309627,
+    "sdf_blur_sigma": 0.8,
+    "envelope_radius_vox": 14.05659558180725,
+    "envelope_radius_m": 10912.048927431135,
+    "smoothing_iterations": 15,
+    "target_tris": 100000,
+    "watertight": false,
+    "outer_voxels": 11634,
+    "inner_voxels": 2252,
+    "final_voxels": 9401
+  }
+}

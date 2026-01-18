@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-01-18T12:02:43.465121",
+  "config": {
+    "unit_mode": "normalized",
+    "normalized_max_dim": 2.0,
+    "utm_zone": 10,
+    "utm_hemisphere": "N",
+    "voxel_resolution": 128,
+    "max_triangles": 100000,
+    "smoothing_iterations": 3,
+    "track_resample_distance_m": 2000.0
+  },
+  "modules": [
+    "D"
+  ],
+  "specimens": [
+    {
+      "specimen_id": "subset_full",
+      "data_file": "data/subsets/subset_full.csv",
+      "modules": {
+        "D": {
+          "status": "success",
+          "metadata": {
+            "unit_mode": "normalized",
+            "bbox_max_dimension": 2.0,
+            "normalization_applied": true,
+            "specimen_id": "subset_full",
+            "option": "D",
+            "n_triangles": 58338,
+            "n_vertices": 29185,
+            "scale_factor": 1.1132937346050007e-05,
+            "bbox_before_normalization": {
+              "max_dimension": 179647.1082009282,
+              "bounds": {
+                "min": [
+                  730106.4054424984,
+                  3703111.613160881,
+                  -6355.615451639618
+                ],
+                "max": [
+                  817246.6721680945,
+                  3882758.7213618094,
+                  62723.83200127933
+                ]
+              }
+            },
+            "generation_params": {
+              "algorithm": "carved_membrane",
+              "voxel_res": 160,
+              "voxel_spacing_m": 1359.8843521038284,
+              "blur_sigma_density": 1.4,
+              "t_outer_factor": 0.22,
+              "t_outer_absolute": 0.8797165846091641,
+              "t_inner_factor": 0.55,
+              "t_inner_absolute": 2.1992914615229107,
+              "sdf_blur_sigma": 0.8,
+              "envelope_radius_vox": 21.866967357810807,
+              "envelope_radius_m": 29736.546737852113,
+              "smoothing_iterations": 15,
+              "target_tris": 100000,
+              "watertight": true,
+              "outer_voxels": 43798,
+              "inner_voxels": 11690,
+              "final_voxels": 32641
+            }
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}

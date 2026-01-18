@@ -1,0 +1,35 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "subset_single_whale",
+  "option": "D",
+  "n_triangles": 1668,
+  "n_vertices": 875,
+  "scale_factor": 2.5478849817495226e-13,
+  "bbox_before_normalization": {
+    "max_dimension": 7849647901400.504,
+    "bounds": {
+      "min": [
+        -1983552279855.1519,
+        -3768431188795.2485,
+        -4100910034613.0605
+      ],
+      "max": [
+        2062998041494.4658,
+        4075765626240.1875,
+        3748737866787.444
+      ]
+    }
+  },
+  "generation_params": {
+    "resolution": 80,
+    "influence_radius_m": 6000.0,
+    "density_threshold": 0.25,
+    "noise_scale": 0.12,
+    "erosion_strength": 0.25,
+    "erosion_radius_m": 4000.0,
+    "smoothing_iterations": 40,
+    "watertight": false
+  }
+}

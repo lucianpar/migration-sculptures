@@ -1,0 +1,35 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "subset_three_whales",
+  "option": "D",
+  "n_triangles": 6676,
+  "n_vertices": 3340,
+  "scale_factor": 6.496159826461758e-13,
+  "bbox_before_normalization": {
+    "max_dimension": 3078741985154.225,
+    "bounds": {
+      "min": [
+        -1428005173176.9912,
+        -1783709242606.9497,
+        -1528799132916.8792
+      ],
+      "max": [
+        1233995581101.2441,
+        1295032742547.2754,
+        1326117837032.5596
+      ]
+    }
+  },
+  "generation_params": {
+    "resolution": 80,
+    "influence_radius_m": 6000.0,
+    "density_threshold": 0.25,
+    "noise_scale": 0.12,
+    "erosion_strength": 0.25,
+    "erosion_radius_m": 4000.0,
+    "smoothing_iterations": 40,
+    "watertight": true
+  }
+}

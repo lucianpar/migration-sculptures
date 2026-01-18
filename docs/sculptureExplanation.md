@@ -1,22 +1,12 @@
 # Migration Sculptures — Data to 3D Model Pipeline (v2.0)# Migration Sculptures — Data to 3D Model Pipeline
 
-
-
 This document explains how whale satellite tracking data is transformed into 3D sculptural forms.This document explains how whale satellite tracking data is transformed into 3D sculptural forms.
 
-
-
-------
-
-
+---
 
 ## Overview## Overview
 
-
-
 Raw GPS tracking data from tagged whales is transformed through a multi-stage pipeline into organic 3D sculptures that visualize migration patterns through space and time.Raw GPS tracking data from tagged whales is transformed through a multi-stage pipeline into organic 3D sculptures that visualize migration patterns through space and time.
-
-
 
 The system supports **three distinct sculpture generation approaches**, each testing a different spatial encoding hypothesis:```
 
@@ -32,9 +22,7 @@ CSV Data → Coordinate Transform → Sculptural Transform → Mesh Generation �
 
 | **C** | Constrained Membrane | Structure through constraint |## 1. Raw Data (Input)
 
-
-
----**Source**: Synthetic data based on Movebank whale tracking format  
+---**Source**: Synthetic data based on Movebank whale tracking format
 
 **File**: `data/raw/movebank/blue_fin_whale_tracks.csv`
 
@@ -44,23 +32,23 @@ CSV Data → Coordinate Transform → Sculptural Transform → Mesh Generation �
 
 ### Coordinate & Unit Flow|-------|-------------|---------|
 
-```| `timestamp` | When the GPS fix was recorded | `2018-03-21 01:00:00` |
+```| `timestamp`| When the GPS fix was recorded |`2018-03-21 01:00:00` |
 
 Raw GPS (lat/lon, degrees)| `location-long` | Longitude in degrees | `-120.32` |
 
-  → UTM Zone 10N projection| `location-lat` | Latitude in degrees | `34.37` |
+→ UTM Zone 10N projection| `location-lat` | Latitude in degrees | `34.37` |
 
-  → meters (x_m, y_m)| `individual-local-identifier` | Whale ID | `whale_001` |
+→ meters (x_m, y_m)| `individual-local-identifier` | Whale ID | `whale_001` |
 
-  → z_m (time mapped to height, in meters)
+→ z_m (time mapped to height, in meters)
 
-  → bundling / density / geometry ops (still meters)**Dataset**: 743 GPS points from 10 whales over ~10 days in the Santa Barbara Channel.
+→ bundling / density / geometry ops (still meters)**Dataset**: 743 GPS points from 10 whales over ~10 days in the Santa Barbara Channel.
 
-  → NORMALIZATION (after geometry generation)
+→ NORMALIZATION (after geometry generation)
 
-  → export mesh---
+→ export mesh---
 
-```
+````
 
 ## 2. Coordinate Transformation
 
@@ -84,7 +72,7 @@ Raw GPS (lat/lon, degrees)| `location-long` | Longitude in degrees | `-120.32` |
 
 - Units: meters
 
-- A 50 km corridor = 50,000 units**Why?** 
+- A 50 km corridor = 50,000 units**Why?**
 
 - Used ONLY for debugging, sanity checks, scale screenshots- Meters allow accurate distance calculations
 
@@ -132,47 +120,47 @@ Every exported mesh includes:
 
 Each track is extruded into a ribbon perpendicular to movement direction:
 
-```
+````
 
 migration-sculptures/```
 
-├── data/         ←  width  →
+├── data/ ← width →
 
-│   ├── specimens/           # Processed specimen data    left ●─────────● right
+│ ├── specimens/ # Processed specimen data left ●─────────● right
 
-│   │   └── SB-BLUE-2015-FALL/         │  center │
+│ │ └── SB-BLUE-2015-FALL/ │ center │
 
-│   │       ├── tracks.parquet         │ (track) │
+│ │ ├── tracks.parquet │ (track) │
 
-│   │       └── meta.json    left ●─────────● right
+│ │ └── meta.json left ●─────────● right
 
-│   └── raw/                 # Raw tracking data         │         │
+│ └── raw/ # Raw tracking data │ │
 
-│       └── movebank/         ▼         ▼
+│ └── movebank/ ▼ ▼
 
-│           └── blue_fin_whale_tracks.csv```
+│ └── blue_fin_whale_tracks.csv```
 
 │
 
 ├── outputs/**Width varies with speed**:
 
-│   ├── option_A_connective_tension/- Slower movement = wider ribbon (more time spent there)
+│ ├── option_A_connective_tension/- Slower movement = wider ribbon (more time spent there)
 
-│   │   ├── meshes/*.glb- Faster movement = narrower ribbon
+│ │ ├── meshes/\*.glb- Faster movement = narrower ribbon
 
-│   │   └── meta/*.json
+│ │ └── meta/\*.json
 
-│   ├── option_B_subtractive_volume/---
+│ ├── option_B_subtractive_volume/---
 
-│   │   ├── meshes/*.glb
+│ │ ├── meshes/\*.glb
 
-│   │   └── meta/*.json## 4. Mesh Generation
+│ │ └── meta/\*.json## 4. Mesh Generation
 
-│   └── option_C_constrained_membrane/
+│ └── option_C_constrained_membrane/
 
-│       ├── meshes/*.glb**Module**: `src/geometry/isosurface.py`
+│ ├── meshes/\*.glb**Module**: `src/geometry/isosurface.py`
 
-│       └── meta/*.json
+│ └── meta/\*.json
 
 │### Process:
 
@@ -214,7 +202,7 @@ migration-sculptures/```
 
     └── run_all.py           # Orchestrator- **Drift**: Constant directional pull (e.g., simulating current)
 
-```- **Vortices**: Rotational patterns at specified centers
+````- **Vortices**: Rotational patterns at specified centers
 
 
 
@@ -224,9 +212,9 @@ migration-sculptures/```
 
 ## 1. Raw Data (Input)vertex_new = vertex_old + flow_field(vertex) * strength * falloff
 
-```
+````
 
-**Source**: Movebank whale tracking data (or synthetic equivalent)  
+**Source**: Movebank whale tracking data (or synthetic equivalent)
 
 **File**: `data/raw/movebank/blue_fin_whale_tracks.csv`- **Strength**: 0.15 (mild) to 0.6 (extreme)
 
@@ -252,8 +240,6 @@ migration-sculptures/```
 
 ## 2. Common Preprocessing| `whale_extreme.glb` | 0.60 | 72% | Very aggressive |
 
-
-
 ### Coordinate Transformation---
 
 **Module**: `src/common/coords.py`
@@ -262,13 +248,13 @@ migration-sculptures/```
 
 GPS coordinates (WGS84) are projected to **UTM Zone 10N** (EPSG:32610):
 
-```python**Format**: glTF Binary (`.glb`)  
+```python**Format**: glTF Binary (`.glb`)
 
 transformer = CoordinateTransformer.for_santa_barbara_channel()**Location**: `output/models/deformed_v2/`
 
-utm = transformer.to_utm(lon, lat)  # Returns UTMCoordinates with x_m, y_m
+utm = transformer.to_utm(lon, lat) # Returns UTMCoordinates with x_m, y_m
 
-```The GLB files can be:
+````The GLB files can be:
 
 - Viewed in any glTF viewer or Blender
 
@@ -316,21 +302,13 @@ mesh, norm_result = normalize_mesh(mesh, target_max_dim=2.0)Width  = SPEED (slow
 
 # Returns: normalized mesh + NormalizationResult with scale_factorLean   = FLOW FIELD deformation
 
-``````
+````
 
-
-
-------
-
-
+---
 
 ## 3. Option A: Connective Tension## Interpretation
 
-
-
 **Goal**: Turn migration data into a single connected filament system.The sculpture encodes multiple data dimensions:
-
-
 
 ### Algorithm| Visual Property | Data Meaning |
 
@@ -354,8 +332,6 @@ mesh, norm_result = normalize_mesh(mesh, target_max_dim=2.0)Width  = SPEED (slow
 
 - ONE connected object---
 
-
-
 ```*Last updated: January 15, 2026*
 
     ●━━━━━━●━━━━━━●
@@ -372,6 +348,7 @@ mesh, norm_result = normalize_mesh(mesh, target_max_dim=2.0)Width  = SPEED (slow
 **Goal**: Create a solid mass and carve migration corridors out of it.
 
 ### Algorithm
+
 1. **Bounding solid**: Axis-aligned box, inflated 10%
 2. **Migration density field**: Rasterize tracks into voxel grid
 3. **Boolean subtract**: `final = block AND NOT migration`
@@ -379,6 +356,7 @@ mesh, norm_result = normalize_mesh(mesh, target_max_dim=2.0)Width  = SPEED (slow
 5. **Normalize**: Max dim = 2.0
 
 ### Visual Character
+
 - Migration as carved absence (void = data)
 - Solid sculptural mass
 - ONE continuous body
@@ -399,6 +377,7 @@ mesh, norm_result = normalize_mesh(mesh, target_max_dim=2.0)Width  = SPEED (slow
 **Goal**: Generate a single enclosing skin deformed by migration density.
 
 ### Algorithm
+
 1. **Base membrane**: Convex hull or ellipsoid around tracks
 2. **Distance field**: For each vertex, distance to nearest track
 3. **Displacement**: `disp = exp(-d²/2σ²) * amplitude` along normals
@@ -406,6 +385,7 @@ mesh, norm_result = normalize_mesh(mesh, target_max_dim=2.0)Width  = SPEED (slow
 5. **Normalize**: Max dim = 2.0
 
 ### Visual Character
+
 - Pressure skin / organic membrane
 - Bulges correlate with migration density
 - ONE continuous surface
@@ -424,6 +404,7 @@ mesh, norm_result = normalize_mesh(mesh, target_max_dim=2.0)Width  = SPEED (slow
 ## 6. Running the Pipeline
 
 ### Single Specimen, All Options
+
 ```bash
 python src/run_all.py \
   --data data/raw/movebank/blue_fin_whale_tracks.csv \
@@ -432,6 +413,7 @@ python src/run_all.py \
 ```
 
 ### Multiple Specimens
+
 ```bash
 python src/run_all.py \
   --specimens 10 \
@@ -441,6 +423,7 @@ python src/run_all.py \
 ```
 
 ### Output
+
 ```
 outputs/
 ├── option_A_connective_tension/meshes/specimen.glb
@@ -454,12 +437,14 @@ outputs/
 ## 7. Viewing in Blender / Three.js
 
 ### Normalized Meshes (Default)
+
 - Max size = 2.0 units
 - Treat 1 unit ≈ 1 meter (virtual)
 - Camera distance: ~5-10 units
 - Lighting scale assumes human-scale sculpture
 
 ### Real-World Scale (Debug)
+
 - Divide by ~1000 to view comfortably
 - Only for checking geographic accuracy
 
@@ -469,13 +454,14 @@ outputs/
 
 These are not independent art objects. Each module tests a different spatial encoding hypothesis:
 
-| Module | Hypothesis | If it fails... |
-|--------|------------|----------------|
-| **A** | Structure through connectivity | Multiple disconnected pieces |
-| **B** | Structure through absence | Floating islands, inconsistent carving |
-| **C** | Structure through constraint | Noisy micro-lumps, no clear bulges |
+| Module | Hypothesis                     | If it fails...                         |
+| ------ | ------------------------------ | -------------------------------------- |
+| **A**  | Structure through connectivity | Multiple disconnected pieces           |
+| **B**  | Structure through absence      | Floating islands, inconsistent carving |
+| **C**  | Structure through constraint   | Noisy micro-lumps, no clear bulges     |
 
 A successful sculpture should:
+
 - Be ONE continuous object
 - Have consistent scale (normalized to 2.0 units)
 - Clearly encode the migration data in its form
@@ -484,15 +470,15 @@ A successful sculpture should:
 
 ## 9. Data Encoding Summary
 
-| Visual Property | Data Meaning |
-|-----------------|--------------|
-| Horizontal position (X,Y) | Geographic location |
-| Vertical position (Z) | Time in migration |
-| **Option A**: Filament thickness | Track density |
-| **Option A**: Sag | Edge length / tension |
-| **Option B**: Void depth | Track density |
-| **Option C**: Bulge amplitude | Track proximity |
+| Visual Property                  | Data Meaning          |
+| -------------------------------- | --------------------- |
+| Horizontal position (X,Y)        | Geographic location   |
+| Vertical position (Z)            | Time in migration     |
+| **Option A**: Filament thickness | Track density         |
+| **Option A**: Sag                | Edge length / tension |
+| **Option B**: Void depth         | Track density         |
+| **Option C**: Bulge amplitude    | Track proximity       |
 
 ---
 
-*Last updated: January 15, 2026 — v2.0 (Module-based architecture)*
+_Last updated: January 15, 2026 — v2.0 (Module-based architecture)_
