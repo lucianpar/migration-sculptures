@@ -140,6 +140,32 @@ def run_module_f(track_data: TrackData, config: Config, output_dir: Path) -> dic
     return metadata.to_dict()
 
 
+def run_module_g(track_data: TrackData, config: Config, output_dir: Path) -> dict:
+    """Run Option G: Spherical Migration Sculpture."""
+    from option_G_spherical.build import build_spherical_sculpture
+    
+    mesh, metadata, _ = build_spherical_sculpture(track_data, config)
+    
+    # Save
+    output_path = output_dir / "option_G_spherical" / "meshes" / f"{track_data.specimen_id}.glb"
+    save_mesh(mesh, output_path, metadata)
+    
+    return metadata.to_dict()
+
+
+def run_module_h3(track_data: TrackData, config: Config, output_dir: Path) -> dict:
+    """Run Option H3: SDF Ridge Shell."""
+    from option_H3_ridge_shell.build import build_h3_from_tracks
+    
+    mesh, metadata, _ = build_h3_from_tracks(track_data, config)
+    
+    # Save
+    output_path = output_dir / "option_H3_ridge_shell" / "meshes" / f"{track_data.specimen_id}.glb"
+    save_mesh(mesh, output_path, metadata)
+    
+    return metadata.to_dict()
+
+
 def run_all(
     data_files: List[Path],
     modules: List[str],
@@ -172,7 +198,9 @@ def run_all(
         'C': run_module_c,
         'D': run_module_d,
         'E': run_module_e,
-        'F': run_module_f
+        'F': run_module_f,
+        'G': run_module_g,
+        'H3': run_module_h3
     }
     
     for data_file in data_files:

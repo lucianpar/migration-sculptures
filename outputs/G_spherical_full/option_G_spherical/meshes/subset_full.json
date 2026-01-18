@@ -1,0 +1,60 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "subset_full",
+  "option": "G",
+  "n_triangles": 65626,
+  "n_vertices": 32813,
+  "scale_factor": 0.9720619649406871,
+  "bbox_before_normalization": {
+    "max_dimension": 2.057482004372052,
+    "bounds": {
+      "min": [
+        -1.0040900621242868,
+        -1.0040900621242868,
+        -1.0040900621242868
+      ],
+      "max": [
+        1.0533919422477651,
+        0.9797151119789757,
+        0.9797151119789758
+      ]
+    }
+  },
+  "generation_params": {
+    "algorithm": "spherical_migration_sculpture",
+    "base_radius": 1.0,
+    "vox_res": 128,
+    "angular_res": 256,
+    "relief_scale": 0.3,
+    "relief_power": 0.7,
+    "density_blur_sigma": 3.0,
+    "enable_carving": true,
+    "carve_threshold": 0.6,
+    "carve_depth": 0.15,
+    "taubin_iters": 8,
+    "target_tris": 100000,
+    "computed": {
+      "lon_range": [
+        -60.0,
+        59.99999999999988
+      ],
+      "lat_range": [
+        -30.0,
+        29.999999999999968
+      ],
+      "voxel_extent": 1.56,
+      "voxel_spacing": 0.024375
+    },
+    "quality": {
+      "n_components": 3,
+      "watertight": true,
+      "solid_volume_voxels": 288576,
+      "density_map_shape": [
+        256,
+        512
+      ]
+    }
+  }
+}
