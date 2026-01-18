@@ -1,0 +1,76 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "subset_three_whales",
+  "option": "F",
+  "n_triangles": 86164,
+  "n_vertices": 43082,
+  "scale_factor": 1.1064092567328544e-05,
+  "bbox_before_normalization": {
+    "max_dimension": 180764.9373709918,
+    "bounds": {
+      "min": [
+        727312.0074634427,
+        3641692.9073632373,
+        -32675.63475872346
+      ],
+      "max": [
+        812782.0188282238,
+        3822457.844734229,
+        71069.57439326585
+      ]
+    }
+  },
+  "generation_params": {
+    "algorithm": "hull_constrained_organic_carving",
+    "vox_res": 192,
+    "padding_factor": 0.1,
+    "hull_margin": 0.12,
+    "hull_radius_percentile": 85.0,
+    "paint_radius_core_factor": 0.02,
+    "paint_radius_env_factor": 0.05,
+    "blur_core_sigma_vox": 1.0,
+    "blur_env_sigma_vox": 2.0,
+    "t_core": 0.55,
+    "t_env": 0.25,
+    "band_vox": 5,
+    "closing_radius_vox": 1,
+    "sdf_blur_sigma_vox": 0.8,
+    "sigma_field_vox": 0.6,
+    "taubin_iters": 6,
+    "target_tris": 120000,
+    "computed": {
+      "hull_bbox_diag_m": 328707.9252683194,
+      "capsule_centroid": [
+        770689.3257419224,
+        3732719.022183063,
+        19837.21214110881
+      ],
+      "capsule_axis": [
+        -0.17885796668146084,
+        0.9294237551602975,
+        -0.3227712984425745
+      ],
+      "capsule_half_length_m": 63479.71489095459,
+      "capsule_radius_m": 31410.089678259217,
+      "paint_radius_core_m": 6574.1585053663875,
+      "paint_radius_env_m": 16000.0,
+      "spacing_m": 1284.171220786947,
+      "grid_shape": [
+        134,
+        193,
+        119
+      ],
+      "voxel_size_m": 1284.171220786947
+    },
+    "quality": {
+      "n_components_before": 1,
+      "n_components_after": 1,
+      "watertight": true,
+      "hull_volume_voxels": 247130,
+      "carve_volume_voxels": 63126,
+      "final_solid_voxels": 195211
+    }
+  }
+}

@@ -6,8 +6,8 @@ data_sources:
     # Blue and Fin Whale Satellite Tracks - Irvine et al. 2019
     doi: "10.5441/001/1.47h576f2"
     base_url: "https://www.movebank.org/cms/webapp"
-    study_id: 1241071646  # Movebank study ID for the whale dataset
-    
+    study_id: 1241071646 # Movebank study ID for the whale dataset
+
   obis_seamap:
     base_url: "https://seamap.env.duke.edu/api"
     gray_whale_dataset: "1899b433-f6e2-40e4-827c-94d6f59785d3"
@@ -51,7 +51,7 @@ species:
         end_day: 31
         description: "Southbound breeding migration"
     min_tracks_per_specimen: 15
-    
+
   fin_whale:
     scientific_name: "Balaenoptera physalus"
     tier: 1
@@ -67,7 +67,7 @@ species:
         end_month: 12
         end_day: 31
     min_tracks_per_specimen: 15
-    
+
   gray_whale:
     scientific_name: "Eschrichtius robustus"
     tier: 2
@@ -85,7 +85,7 @@ species:
         end_day: 31
         description: "Southbound to Baja"
     min_tracks_per_specimen: 15
-    
+
   humpback_whale:
     scientific_name: "Megaptera novaeangliae"
     tier: 2
@@ -106,49 +106,49 @@ species:
 processing:
   # Track Resampling
   resampling:
-    temporal_interval_hours: 1  # Resample to hourly points
-    spatial_interval_km: 5      # Alternative: fixed spatial intervals
-    method: "catmull_rom"       # Spline interpolation method
-    
+    temporal_interval_hours: 1 # Resample to hourly points
+    spatial_interval_km: 5 # Alternative: fixed spatial intervals
+    method: "catmull_rom" # Spline interpolation method
+
   # Outlier Removal
   outlier_removal:
-    max_speed_kmh: 30           # Maximum realistic whale speed
-    deviation_threshold_std: 2  # Remove tracks > 2 std from mean path
-    
+    max_speed_kmh: 30 # Maximum realistic whale speed
+    deviation_threshold_std: 2 # Remove tracks > 2 std from mean path
+
   # Trajectory Bundling
   bundling:
-    k_neighbors: 5              # Number of neighbors for attraction
-    attraction_strength: 0.3    # How strongly tracks are pulled together
-    iterations: 10              # Number of bundling iterations
-    decay_rate: 0.9             # Reduce step size each iteration
+    k_neighbors: 5 # Number of neighbors for attraction
+    attraction_strength: 0.3 # How strongly tracks are pulled together
+    iterations: 10 # Number of bundling iterations
+    decay_rate: 0.9 # Reduce step size each iteration
 
 # Geometry Generation
 geometry:
   # Voxel Grid for Isosurface
   voxel_grid:
-    resolution: 256             # Grid size (256³)
-    padding: 0.1                # Padding around data bounds (fraction)
-    
+    resolution: 256 # Grid size (256³)
+    padding: 0.1 # Padding around data bounds (fraction)
+
   # Isosurface Extraction
   isosurface:
-    density_threshold: 0.3      # Marching cubes threshold (0-1)
-    smoothing_iterations: 2     # Laplacian smoothing passes
-    
+    density_threshold: 0.3 # Marching cubes threshold (0-1)
+    smoothing_iterations: 2 # Laplacian smoothing passes
+
   # Mesh Simplification
   mesh:
-    max_triangles: 100000       # Target triangle count
+    max_triangles: 100000 # Target triangle count
     preserve_topology: true
-    
+
   # Output Scaling
   scaling:
-    normalize: true             # Normalize to standard bounding box
-    normalized_size: 2.0        # Max dimension in meters (scene units)
+    normalize: true # Normalize to standard bounding box
+    normalized_size: 2.0 # Max dimension in meters (scene units)
 
 # Export Settings
 export:
-  format: "glb"                 # Binary glTF format
-  include_metrics: true         # Embed metrics in glTF extras
-  
+  format: "glb" # Binary glTF format
+  include_metrics: true # Embed metrics in glTF extras
+
 # Initial Target Specimens (10 sculptures)
 initial_specimens:
   - species: blue_whale

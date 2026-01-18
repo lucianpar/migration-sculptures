@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-01-18T13:20:12.216184",
+  "config": {
+    "unit_mode": "normalized",
+    "normalized_max_dim": 2.0,
+    "utm_zone": 10,
+    "utm_hemisphere": "N",
+    "voxel_resolution": 128,
+    "max_triangles": 100000,
+    "smoothing_iterations": 3,
+    "track_resample_distance_m": 2000.0
+  },
+  "modules": [
+    "F"
+  ],
+  "specimens": [
+    {
+      "specimen_id": "subset_full",
+      "data_file": "data/subsets/subset_full.csv",
+      "modules": {
+        "F": {
+          "status": "success",
+          "metadata": {
+            "unit_mode": "normalized",
+            "bbox_max_dimension": 2.0,
+            "normalization_applied": true,
+            "specimen_id": "subset_full",
+            "option": "F",
+            "n_triangles": 68596,
+            "n_vertices": 34296,
+            "scale_factor": 7.430111550209794e-06,
+            "bbox_before_normalization": {
+              "max_dimension": 269174.96278283047,
+              "bounds": {
+                "min": [
+                  727005.7932575839,
+                  3611150.4350594506,
+                  -36813.231422272576
+                ],
+                "max": [
+                  834047.4279482476,
+                  3880325.397842281,
+                  80970.99751968487
+                ]
+              }
+            },
+            "generation_params": {
+              "algorithm": "hull_constrained_organic_carving",
+              "vox_res": 192,
+              "padding_factor": 0.1,
+              "hull_margin": 0.12,
+              "hull_radius_percentile": 85.0,
+              "paint_radius_core_factor": 0.02,
+              "paint_radius_env_factor": 0.05,
+              "blur_core_sigma_vox": 1.0,
+              "blur_env_sigma_vox": 2.0,
+              "t_core": 0.55,
+              "t_env": 0.25,
+              "band_vox": 5,
+              "closing_radius_vox": 1,
+              "sdf_blur_sigma_vox": 0.8,
+              "sigma_field_vox": 0.6,
+              "taubin_iters": 6,
+              "target_tris": 120000,
+              "computed": {
+                "hull_bbox_diag_m": 475828.9805565876,
+                "capsule_centroid": [
+                  781479.0682255417,
+                  3746683.172270764,
+                  23027.58919810545
+                ],
+                "capsule_axis": [
+                  -0.1366992726687828,
+                  0.9718281751422079,
+                  -0.19199819491753584
+                ],
+                "capsule_half_length_m": 97070.07303092584,
+                "capsule_radius_m": 40289.92197535968,
+                "paint_radius_core_m": 8000.0,
+                "paint_radius_env_m": 16000.0,
+                "spacing_m": 1898.0026246414975,
+                "grid_shape": [
+                  114,
+                  193,
+                  108
+                ],
+                "voxel_size_m": 1898.0026246414975
+              },
+              "quality": {
+                "n_components_before": 1,
+                "n_components_after": 1,
+                "watertight": true,
+                "hull_volume_voxels": 184870,
+                "carve_volume_voxels": 83925,
+                "final_solid_voxels": 123130
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}

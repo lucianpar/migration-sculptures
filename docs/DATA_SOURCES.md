@@ -10,6 +10,7 @@ Irvine LM, Palacios DM, Urbán J, Mate BR (2019). Scales of blue and fin whale f
 **DOI:** [10.5441/001/1.47h576f2](https://doi.org/10.5441/001/1.47h576f2)
 
 **Dataset Details:**
+
 - 271 satellite tracks
 - 176 blue whales
 - 95 fin whales

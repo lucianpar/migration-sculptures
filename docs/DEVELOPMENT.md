@@ -115,10 +115,12 @@ Edit `config/pipeline_config.yaml` to adjust:
 ## Processing Pipeline
 
 ### 1. Data Acquisition
+
 - Downloads whale tracking data from Movebank and OBIS-SEAMAP
 - Outputs: CSV/JSON files in `data/raw/`
 
 ### 2. Track Processing
+
 - Parses raw data into Track objects
 - Filters by species, region, and date range
 - Transforms coordinates to UTM projection
@@ -127,23 +129,27 @@ Edit `config/pipeline_config.yaml` to adjust:
 - Groups into Specimens (species + season + year)
 
 ### 3. Trajectory Bundling
+
 - Force-directed bundling pulls tracks together
 - Creates cohesive "migration corridors"
 - Preserves divergent areas
 
 ### 4. Mesh Generation
+
 - Creates 3D voxel density grid
 - Extracts isosurface using marching cubes
 - Simplifies mesh to target triangle count
 - Normalizes size for consistent display
 
 ### 5. Metrics Computation
+
 - Route Coherence: Bundle tightness
 - Density Entropy: Spatial concentration
 - Centroid Drift: Year-to-year movement
 - Temporal Variability: Route consistency
 
 ### 6. Export
+
 - Saves mesh as glTF binary (.glb)
 - Embeds metadata and metrics in file
 
@@ -152,17 +158,20 @@ Edit `config/pipeline_config.yaml` to adjust:
 ## Visualization Architecture
 
 ### Scene Setup
+
 - Three.js WebGL rendering
 - OrbitControls for navigation
 - Custom lighting for sculptural emphasis
 
 ### Sculpture Display
+
 - Grid layout of specimens
 - Color-coded by species
 - Interactive selection
 - Info panel with metrics
 
 ### Demo Mode
+
 - When models aren't available
 - Procedural placeholder sculptures
 - Demonstrates UI functionality
@@ -181,21 +190,26 @@ python -m pytest tests/
 ## Troubleshooting
 
 ### "Import could not be resolved" errors
+
 These appear before dependencies are installed. Run:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Data download fails
+
 - Check internet connection
 - Some datasets require Movebank account
 - Follow manual download instructions
 
 ### No sculptures visible
+
 - Check browser console for errors
 - Ensure models are in `visualization/public/models/`
 - Demo mode activates if models not found
 
 ### Performance issues
+
 - Reduce mesh resolution in config
 - Limit number of visible sculptures with filters

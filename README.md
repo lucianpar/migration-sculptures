@@ -21,18 +21,21 @@ The system consists of two main components:
 ## Data Sources
 
 ### Primary Source
+
 - **Movebank Data Repository**: Irvine et al. (2019) blue and fin whale satellite tracks
   - DOI: 10.5441/001/1.47h576f2
   - 271 tracks from 176 blue whales and 95 fin whales (1994-2018)
   - Coverage includes Santa Barbara Channel feeding grounds
 
 ### Supplementary Sources
+
 - **OBIS-SEAMAP**: Gray Whales Count project, opportunistic sightings
 - **NOAA Animal Telemetry Network (ATN)**: Additional whale telemetry data
 
 ## Installation
 
 ### Prerequisites
+
 - Python 3.9+
 - Node.js 18+
 - npm or yarn
@@ -121,10 +124,10 @@ Each sculpture includes computed metrics:
 
 ## Initial Target: 10 Sculptures
 
-| Species | Season | Years |
-|---------|--------|-------|
+| Species    | Season | Years                        |
+| ---------- | ------ | ---------------------------- |
 | Blue Whale | Spring | 2010, 2012, 2014, 2016, 2018 |
-| Blue Whale | Fall | 2010, 2012, 2014, 2016, 2018 |
+| Blue Whale | Fall   | 2010, 2012, 2014, 2016, 2018 |
 
 ## License
 

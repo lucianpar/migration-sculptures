@@ -1,0 +1,64 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "subset_three_whales",
+  "option": "E",
+  "n_triangles": 133704,
+  "n_vertices": 67572,
+  "scale_factor": 1.573228402389065e-05,
+  "bbox_before_normalization": {
+    "max_dimension": 127127.12260742625,
+    "bounds": {
+      "min": [
+        728861.80371727,
+        3694942.2400903227,
+        -14972.065097330898
+      ],
+      "max": [
+        816382.3044448991,
+        3822069.362697749,
+        57260.11443366441
+      ]
+    }
+  },
+  "generation_params": {
+    "algorithm": "refined_carved_specimen",
+    "vox_res": 192,
+    "margin_factor": 0.12,
+    "paint_radius_factor": 0.03,
+    "paint_radius_min_m": 2000.0,
+    "paint_radius_max_m": 12000.0,
+    "density_blur_sigma_vox": 1.4,
+    "t_low_factor": 0.25,
+    "t_high_factor": 0.55,
+    "carve_strength_factor": 0.8,
+    "field_blur_sigma_vox": 0.9,
+    "taubin_iters": 10,
+    "decimate_target_tris": 120000,
+    "enable_striation": false,
+    "computed": {
+      "bbox_diag_m": 124096.97753758126,
+      "paint_radius_m": 3722.9093261274375,
+      "spacing_m": 661.1445927579551,
+      "t_low": 1.8360424862090114,
+      "t_high": 4.0392934696598255,
+      "carve_strength": 528.9156742063641,
+      "grid_shape": [
+        110,
+        193,
+        144
+      ]
+    },
+    "quality": {
+      "n_components": 1,
+      "watertight": false,
+      "has_cavity": true,
+      "solid_volume_voxels": 1730806,
+      "envelope_volume_voxels": 1730868,
+      "carve_volume_voxels": 45937,
+      "curvature_variance": 0.21017165032866852,
+      "curvature_mean": 0.06703231202183632
+    }
+  }
+}

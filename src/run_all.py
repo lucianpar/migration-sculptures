@@ -114,6 +114,32 @@ def run_module_d(track_data: TrackData, config: Config, output_dir: Path) -> dic
     return metadata.to_dict()
 
 
+def run_module_e(track_data: TrackData, config: Config, output_dir: Path) -> dict:
+    """Run Option E: Refined Carved Specimen (Hero Module)."""
+    from option_E_refined_specimen.build import build_refined_specimen
+    
+    mesh, metadata, _ = build_refined_specimen(track_data, config)
+    
+    # Save
+    output_path = output_dir / "option_E_refined_specimen" / "meshes" / f"{track_data.specimen_id}.glb"
+    save_mesh(mesh, output_path, metadata)
+    
+    return metadata.to_dict()
+
+
+def run_module_f(track_data: TrackData, config: Config, output_dir: Path) -> dict:
+    """Run Option F: Hull-Constrained Organic Carving."""
+    from option_F_hull_carve.build import build_hull_carve
+    
+    mesh, metadata, _ = build_hull_carve(track_data, config)
+    
+    # Save
+    output_path = output_dir / "option_F_hull_carve" / "meshes" / f"{track_data.specimen_id}.glb"
+    save_mesh(mesh, output_path, metadata)
+    
+    return metadata.to_dict()
+
+
 def run_all(
     data_files: List[Path],
     modules: List[str],
@@ -144,7 +170,9 @@ def run_all(
         'A': run_module_a,
         'B': run_module_b,
         'C': run_module_c,
-        'D': run_module_d
+        'D': run_module_d,
+        'E': run_module_e,
+        'F': run_module_f
     }
     
     for data_file in data_files:

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-01-18T13:14:35.867152",
+  "config": {
+    "unit_mode": "normalized",
+    "normalized_max_dim": 2.0,
+    "utm_zone": 10,
+    "utm_hemisphere": "N",
+    "voxel_resolution": 128,
+    "max_triangles": 100000,
+    "smoothing_iterations": 3,
+    "track_resample_distance_m": 2000.0
+  },
+  "modules": [
+    "F"
+  ],
+  "specimens": [
+    {
+      "specimen_id": "subset_single_whale",
+      "data_file": "data/subsets/subset_single_whale.csv",
+      "modules": {
+        "F": {
+          "status": "success",
+          "metadata": {
+            "unit_mode": "normalized",
+            "bbox_max_dimension": 2.0,
+            "normalization_applied": true,
+            "specimen_id": "subset_single_whale",
+            "option": "F",
+            "n_triangles": 63300,
+            "n_vertices": 31648,
+            "scale_factor": 1.328365391709138e-05,
+            "bbox_before_normalization": {
+              "max_dimension": 150560.9836331783,
+              "bounds": {
+                "min": [
+                  768790.9723512146,
+                  3657344.4442842714,
+                  -21157.703502229462
+                ],
+                "max": [
+                  826074.2157750905,
+                  3807905.4279174497,
+                  115595.99763578165
+                ]
+              }
+            },
+            "generation_params": {
+              "algorithm": "hull_constrained_organic_carving",
+              "vox_res": 192,
+              "padding_factor": 0.1,
+              "hull_margin": 0.12,
+              "hull_radius_percentile": 85.0,
+              "paint_radius_core_factor": 0.02,
+              "paint_radius_env_factor": 0.05,
+              "blur_core_sigma_vox": 1.0,
+              "blur_env_sigma_vox": 2.0,
+              "t_core": 0.55,
+              "t_env": 0.25,
+              "band_vox": 5,
+              "closing_radius_vox": 1,
+              "sdf_blur_sigma_vox": 0.8,
+              "sigma_field_vox": 0.6,
+              "taubin_iters": 6,
+              "target_tris": 120000,
+              "computed": {
+                "hull_bbox_diag_m": 329215.69506062946,
+                "capsule_centroid": [
+                  797999.7136754014,
+                  3733438.1444303053,
+                  47782.19051156418
+                ],
+                "capsule_axis": [
+                  -0.1340297168714806,
+                  0.7458724667923081,
+                  -0.6524647870011897
+                ],
+                "capsule_half_length_m": 76635.28857425092,
+                "capsule_radius_m": 18401.096508101167,
+                "paint_radius_core_m": 6584.313901212589,
+                "paint_radius_env_m": 16000.0,
+                "spacing_m": 1130.029351524805,
+                "grid_shape": [
+                  181,
+                  193,
+                  111
+                ],
+                "voxel_size_m": 1130.029351524805
+              },
+              "quality": {
+                "n_components_before": 1,
+                "n_components_after": 1,
+                "watertight": true,
+                "hull_volume_voxels": 131084,
+                "carve_volume_voxels": 46140,
+                "final_solid_voxels": 93954
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}

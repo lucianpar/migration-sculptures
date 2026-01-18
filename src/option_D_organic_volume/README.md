@@ -1,14 +1,15 @@
 # Option D: Organic Volume (Hybrid)
 
 Combines the best of Options B and C:
+
 - **Solid continuous body** like the constrained membrane (not spiky/jagged)
 - **Organic sculpting** influenced by migration paths like subtractive volume
 - **Smooth, flowing forms** that suggest erosion and natural flow
 
 ## Concept
 
-Instead of harsh corridor carving (Option B) or membrane displacement (Option C), 
-Option D creates an organic blob from migration density, then gently erodes it 
+Instead of harsh corridor carving (Option B) or membrane displacement (Option C),
+Option D creates an organic blob from migration density, then gently erodes it
 along migration paths. Heavy smoothing creates a soft, sculptural result.
 
 ## Algorithm
@@ -22,14 +23,14 @@ along migration paths. Heavy smoothing creates a soft, sculptural result.
 
 ## Key Parameters
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `resolution` | 80 | Voxel grid resolution |
-| `influence_radius_m` | 6000 | Point influence for blob creation |
-| `density_threshold` | 0.25 | Surface extraction level |
-| `noise_scale` | 0.12 | Organic noise amount (0-1) |
-| `erosion_strength` | 0.25 | Path erosion intensity (0-1) |
-| `smoothing_iterations` | 40 | Laplacian smoothing passes |
+| Parameter              | Default | Description                       |
+| ---------------------- | ------- | --------------------------------- |
+| `resolution`           | 80      | Voxel grid resolution             |
+| `influence_radius_m`   | 6000    | Point influence for blob creation |
+| `density_threshold`    | 0.25    | Surface extraction level          |
+| `noise_scale`          | 0.12    | Organic noise amount (0-1)        |
+| `erosion_strength`     | 0.25    | Path erosion intensity (0-1)      |
+| `smoothing_iterations` | 40      | Laplacian smoothing passes        |
 
 ## Acceptance Criteria
 
