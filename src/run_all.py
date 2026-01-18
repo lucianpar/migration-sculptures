@@ -2,11 +2,36 @@
 """
 Migration Sculptures - Orchestrator
 
-Run all sculpture generation modules on specimen data.
+Run sculpture generation modules on migration track data.
+
+CURRENT DEFAULT: H3 (SDF Ridge Shell)
+- Produces thin winding ridges on a spherical shell
+- Anti-blob design for topographic sculptural forms
+
+DEPRECATED MODULES (still available but not recommended):
+- A: Connective Tension (tube connections)
+- B: Subtractive Volume (point cloud carving)
+- C: Constrained Membrane (convex hull)
+- D: Carved Membrane (hybrid B+C)
+- E: Refined Carved Specimen (PCA hull + density carving)
+- F: Hull-Constrained Carving (E hull minus D corridors)
+- G: Spherical Migration (density-modulated sphere)
+
+LEGACY RENDER MODULES (removed):
+- module_F_specimen_render (Three.js render pipeline) - superseded by H3
 
 Usage:
-    python src/run_all.py --specimens 10 --unit_mode normalized --modules A B C
-    python src/run_all.py --data data/raw/movebank/blue_fin_whale_tracks.csv --modules A
+    # Default: H3 module
+    python src/run_all.py --data data/subsets/subset_full.csv
+    
+    # Explicit module selection
+    python src/run_all.py --data data/subsets/subset_full.csv --modules H3
+    
+    # High resolution
+    python src/run_all.py --data data/subsets/subset_full.csv --resolution 192
+    
+    # Legacy modules (deprecated)
+    python src/run_all.py --data data/subsets/subset_full.csv --modules E F G
 """
 
 import argparse
@@ -63,8 +88,8 @@ def find_specimen_files(data_dir: Path, limit: Optional[int] = None) -> List[Pat
 
 
 def run_module_a(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option A: Connective Tension."""
-    from option_A_connective_tension.build import build_connective_tension
+    """Run Option A: Connective Tension. [DEPRECATED]"""
+    from _archive.experimental.option_A_connective_tension.build import build_connective_tension
     
     mesh, metadata = build_connective_tension(track_data, config)
     
@@ -76,8 +101,8 @@ def run_module_a(track_data: TrackData, config: Config, output_dir: Path) -> dic
 
 
 def run_module_b(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option B: Subtractive Volume."""
-    from option_B_subtractive_volume.build import build_subtractive_volume
+    """Run Option B: Subtractive Volume. [DEPRECATED]"""
+    from _archive.experimental.option_B_subtractive_volume.build import build_subtractive_volume
     
     mesh, metadata = build_subtractive_volume(track_data, config)
     
@@ -89,8 +114,8 @@ def run_module_b(track_data: TrackData, config: Config, output_dir: Path) -> dic
 
 
 def run_module_c(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option C: Constrained Membrane."""
-    from option_C_constrained_membrane.build import build_constrained_membrane
+    """Run Option C: Constrained Membrane. [DEPRECATED]"""
+    from _archive.experimental.option_C_constrained_membrane.build import build_constrained_membrane
     
     mesh, metadata = build_constrained_membrane(track_data, config)
     
@@ -102,8 +127,8 @@ def run_module_c(track_data: TrackData, config: Config, output_dir: Path) -> dic
 
 
 def run_module_d(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option D: Carved Membrane (Hybrid B+C)."""
-    from option_D_carved_membrane.build import build_carved_membrane
+    """Run Option D: Carved Membrane (Hybrid B+C). [DEPRECATED]"""
+    from _archive.experimental.option_D_carved_membrane.build import build_carved_membrane
     
     mesh, metadata = build_carved_membrane(track_data, config)
     
@@ -115,8 +140,8 @@ def run_module_d(track_data: TrackData, config: Config, output_dir: Path) -> dic
 
 
 def run_module_e(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option E: Refined Carved Specimen (Hero Module)."""
-    from option_E_refined_specimen.build import build_refined_specimen
+    """Run Option E: Refined Carved Specimen (Hero Module). [DEPRECATED]"""
+    from _archive.experimental.option_E_refined_specimen.build import build_refined_specimen
     
     mesh, metadata, _ = build_refined_specimen(track_data, config)
     
@@ -128,8 +153,8 @@ def run_module_e(track_data: TrackData, config: Config, output_dir: Path) -> dic
 
 
 def run_module_f(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option F: Hull-Constrained Organic Carving."""
-    from option_F_hull_carve.build import build_hull_carve
+    """Run Option F: Hull-Constrained Organic Carving. [DEPRECATED]"""
+    from _archive.experimental.option_F_hull_carve.build import build_hull_carve
     
     mesh, metadata, _ = build_hull_carve(track_data, config)
     
@@ -141,8 +166,8 @@ def run_module_f(track_data: TrackData, config: Config, output_dir: Path) -> dic
 
 
 def run_module_g(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option G: Spherical Migration Sculpture."""
-    from option_G_spherical.build import build_spherical_sculpture
+    """Run Option G: Spherical Migration Sculpture. [DEPRECATED]"""
+    from _archive.experimental.option_G_spherical.build import build_spherical_sculpture
     
     mesh, metadata, _ = build_spherical_sculpture(track_data, config)
     
@@ -154,13 +179,13 @@ def run_module_g(track_data: TrackData, config: Config, output_dir: Path) -> dic
 
 
 def run_module_h3(track_data: TrackData, config: Config, output_dir: Path) -> dict:
-    """Run Option H3: SDF Ridge Shell."""
-    from option_H3_ridge_shell.build import build_h3_from_tracks
+    """Run Option H3: SDF Ridge Shell. [ACTIVE]"""
+    from functional.H3.option_H3_ridge_shell.build import build_h3_from_tracks
     
     mesh, metadata, _ = build_h3_from_tracks(track_data, config)
     
-    # Save
-    output_path = output_dir / "option_H3_ridge_shell" / "meshes" / f"{track_data.specimen_id}.glb"
+    # Save to functional output location
+    output_path = output_dir / "functional" / "H3" / "meshes" / f"{track_data.specimen_id}.glb"
     save_mesh(mesh, output_path, metadata)
     
     return metadata.to_dict()
@@ -288,8 +313,8 @@ def main():
     parser.add_argument(
         "--modules", "-m",
         nargs="+",
-        default=["A", "B", "C"],
-        help="Modules to run (A, B, C)"
+        default=["H3"],
+        help="Modules to run. Default: H3. Available: H3 (recommended), A, B, C, D, E, F, G (deprecated)"
     )
     parser.add_argument(
         "--unit-mode", "-u",

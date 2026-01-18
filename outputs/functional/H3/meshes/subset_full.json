@@ -1,0 +1,44 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "subset_full",
+  "option": "H3",
+  "n_triangles": 19270,
+  "n_vertices": 9619,
+  "scale_factor": 1.1647595655003589,
+  "bbox_before_normalization": {
+    "max_dimension": 1.7170925736427307,
+    "bounds": {
+      "min": [
+        0.3855482339859009,
+        -0.9039056897163391,
+        -0.54906165599823
+      ],
+      "max": [
+        1.0249903202056885,
+        0.8131868839263916,
+        0.5289792418479919
+      ]
+    }
+  },
+  "generation_params": {
+    "algorithm": "sdf_ridge_shell",
+    "sphere_radius": 1.0,
+    "ridge_radius": 0.03,
+    "ridge_height": 0.05,
+    "shell_inner": 0.92,
+    "shell_outer": 1.15,
+    "resample_spacing": 0.02,
+    "voxel_resolution": 128,
+    "density_falloff": 2.0,
+    "iso_threshold": 0.15,
+    "smooth_iterations": 10,
+    "smooth_factor": 0.5,
+    "quality": {
+      "watertight": true,
+      "n_curves": 1,
+      "total_curve_points": 742
+    }
+  }
+}
