@@ -1,0 +1,44 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "humpback_hawaii_alaska",
+  "option": "H3",
+  "n_triangles": 6096,
+  "n_vertices": 3050,
+  "scale_factor": 1.218585731690226,
+  "bbox_before_normalization": {
+    "max_dimension": 1.6412468552589417,
+    "bounds": {
+      "min": [
+        0.38196268677711487,
+        -0.8242044448852539,
+        -0.5478209853172302
+      ],
+      "max": [
+        1.0246509313583374,
+        0.8170424103736877,
+        0.5275923609733582
+      ]
+    }
+  },
+  "generation_params": {
+    "algorithm": "sdf_ridge_shell",
+    "sphere_radius": 1.0,
+    "ridge_radius": 0.03,
+    "ridge_height": 0.05,
+    "shell_inner": 0.92,
+    "shell_outer": 1.15,
+    "resample_spacing": 0.02,
+    "voxel_resolution": 128,
+    "density_falloff": 2.0,
+    "iso_threshold": 0.15,
+    "smooth_iterations": 10,
+    "smooth_factor": 0.5,
+    "quality": {
+      "watertight": true,
+      "n_curves": 1,
+      "total_curve_points": 526
+    }
+  }
+}

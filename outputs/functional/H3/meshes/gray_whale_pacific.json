@@ -1,0 +1,44 @@
+{
+  "unit_mode": "normalized",
+  "bbox_max_dimension": 2.0,
+  "normalization_applied": true,
+  "specimen_id": "gray_whale_pacific",
+  "option": "H3",
+  "n_triangles": 5592,
+  "n_vertices": 2798,
+  "scale_factor": 1.2653585756184373,
+  "bbox_before_normalization": {
+    "max_dimension": 1.5805796384811401,
+    "bounds": {
+      "min": [
+        0.37938618659973145,
+        -0.7949888110160828,
+        -0.5481815338134766
+      ],
+      "max": [
+        1.0260740518569946,
+        0.7855908274650574,
+        0.5279468894004822
+      ]
+    }
+  },
+  "generation_params": {
+    "algorithm": "sdf_ridge_shell",
+    "sphere_radius": 1.0,
+    "ridge_radius": 0.03,
+    "ridge_height": 0.05,
+    "shell_inner": 0.92,
+    "shell_outer": 1.15,
+    "resample_spacing": 0.02,
+    "voxel_resolution": 128,
+    "density_falloff": 2.0,
+    "iso_threshold": 0.15,
+    "smooth_iterations": 10,
+    "smooth_factor": 0.5,
+    "quality": {
+      "watertight": true,
+      "n_curves": 1,
+      "total_curve_points": 642
+    }
+  }
+}

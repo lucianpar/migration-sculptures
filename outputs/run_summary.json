@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-18T14:24:02.518140",
+  "timestamp": "2026-01-18T14:29:52.723611",
   "config": {
     "unit_mode": "normalized",
     "normalized_max_dim": 2.0,
@@ -15,8 +15,8 @@
   ],
   "specimens": [
     {
-      "specimen_id": "subset_full",
-      "data_file": "data/subsets/subset_full.csv",
+      "specimen_id": "fin_whale_channel_islands",
+      "data_file": "data/raw/new_tracks/fin_whale_channel_islands.csv",
       "modules": {
         "H3": {
           "status": "success",
@@ -24,23 +24,23 @@
             "unit_mode": "normalized",
             "bbox_max_dimension": 2.0,
             "normalization_applied": true,
-            "specimen_id": "subset_full",
+            "specimen_id": "fin_whale_channel_islands",
             "option": "H3",
-            "n_triangles": 19270,
-            "n_vertices": 9619,
-            "scale_factor": 1.1647595655003589,
+            "n_triangles": 14992,
+            "n_vertices": 7492,
+            "scale_factor": 1.143456831942226,
             "bbox_before_normalization": {
-              "max_dimension": 1.7170925736427307,
+              "max_dimension": 1.7490822076797485,
               "bounds": {
                 "min": [
-                  0.3855482339859009,
-                  -0.9039056897163391,
-                  -0.54906165599823
+                  0.43143126368522644,
+                  -0.8822088241577148,
+                  -0.5402873158454895
                 ],
                 "max": [
-                  1.0249903202056885,
-                  0.8131868839263916,
-                  0.5289792418479919
+                  1.0256376266479492,
+                  0.8668733835220337,
+                  0.524133563041687
                 ]
               }
             },
@@ -60,7 +60,7 @@
               "quality": {
                 "watertight": true,
                 "n_curves": 1,
-                "total_curve_points": 742
+                "total_curve_points": 287
               }
             }
           }
